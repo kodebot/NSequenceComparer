@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NCompare\NSequenceComparer.csproj">
+    <ProjectReference Include="..\NSequenceComparer\NSequenceComparer.csproj">
       <Project>{0629DE0E-E513-47A8-847F-11284D3664C5}</Project>
       <Name>NSequenceComparer</Name>
     </ProjectReference>
