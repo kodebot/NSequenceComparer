@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSequenceComparer", "NSequenceComparer\NSequenceComparer.csproj", "{0629DE0E-E513-47A8-847F-11284D3664C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{3C98159A-40D8-44F0-A32F-9E1EDC4C447F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSequenceComparer.Tests", "NSequenceComparer.Tests\NSequenceComparer.Tests.csproj", "{2E598F99-25D4-468C-AC63-4EC033924782}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0629DE0E-E513-47A8-847F-11284D3664C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0629DE0E-E513-47A8-847F-11284D3664C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0629DE0E-E513-47A8-847F-11284D3664C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0629DE0E-E513-47A8-847F-11284D3664C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E598F99-25D4-468C-AC63-4EC033924782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E598F99-25D4-468C-AC63-4EC033924782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E598F99-25D4-468C-AC63-4EC033924782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E598F99-25D4-468C-AC63-4EC033924782}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2E598F99-25D4-468C-AC63-4EC033924782} = {3C98159A-40D8-44F0-A32F-9E1EDC4C447F}
+	EndGlobalSection
+EndGlobal
