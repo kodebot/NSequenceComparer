@@ -6,10 +6,10 @@ namespace NSequenceComparer
 {
     internal static class NSequenceComparerInternal<T>
     {
-        internal static List<T> GetLongestCommonSubsequence(List<T> firstSequence, List<T> secondSequence)
+        internal static List<T> GetLongestCommonSubsequence(IEnumerable<T> firstSequence, IEnumerable<T> secondSequence)
         {
-            var firstSequenceCount = firstSequence.Count;
-            var secondSequenceCount = secondSequence.Count;
+            var firstSequenceCount = firstSequence.Count();
+            var secondSequenceCount = secondSequence.Count();
             var result = new List<T>();
 
             var matrix = new int[firstSequenceCount + 1, secondSequenceCount + 1];
@@ -46,7 +46,7 @@ namespace NSequenceComparer
             return result;
         }
 
-        internal static List<Difference<T>> GetDifferences(List<T> firstSequence, List<T> secondSequnece)
+        internal static List<Difference<T>> GetDifferences(IEnumerable<T> firstSequence, IEnumerable<T> secondSequnece)
         {
             var differences = new List<Difference<T>>();
 
@@ -71,23 +71,23 @@ namespace NSequenceComparer
 
 
             var firstSequenceCurrentIndex = 0;
-            var firstSequenceLength = firstSequence.Count;
+            var firstSequenceLength = firstSequence.Count();
             var secondSequenceCurrentIndex = 0;
-            var secondSequenceLength = secondSequnece.Count;
+            var secondSequenceLength = secondSequnece.Count();
 
             foreach (var lcsItem in longestCommonSubSequence)
             {
                 while (firstSequenceCurrentIndex < firstSequenceLength &&
                     !firstSequence.ElementAt(firstSequenceCurrentIndex).Equals(lcsItem))
                 {
-                    differences.Add(new Difference<T>(lcsItem, DifferenceKind.Deleted));
+                    differences.Add(new Difference<T>(firstSequence.ElementAt(firstSequenceCurrentIndex), DifferenceKind.Deleted));
                     firstSequenceCurrentIndex++;
                 }
 
                 while (secondSequenceCurrentIndex < secondSequenceLength &&
                     !secondSequnece.ElementAt(secondSequenceCurrentIndex).Equals(lcsItem))
                 {
-                    differences.Add(new Difference<T>(lcsItem, DifferenceKind.Added));
+                    differences.Add(new Difference<T>(secondSequnece.ElementAt(secondSequenceCurrentIndex), DifferenceKind.Added));
                     secondSequenceCurrentIndex++;
                 }
 
@@ -98,6 +98,19 @@ namespace NSequenceComparer
                     secondSequenceCurrentIndex++;
                 }
 
+            }
+
+            // for items appearing after last element in LCS
+            while (firstSequenceCurrentIndex < firstSequenceLength)
+            {
+                differences.Add(new Difference<T>(firstSequence.ElementAt(firstSequenceCurrentIndex), DifferenceKind.Deleted));
+                firstSequenceCurrentIndex++;
+            }
+
+            while (secondSequenceCurrentIndex < secondSequenceLength)
+            {
+                differences.Add(new Difference<T>(secondSequnece.ElementAt(secondSequenceCurrentIndex), DifferenceKind.Added));
+                secondSequenceCurrentIndex++;
             }
 
             return differences;

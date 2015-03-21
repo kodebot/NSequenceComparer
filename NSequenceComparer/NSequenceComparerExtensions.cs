@@ -9,13 +9,13 @@ namespace NSequenceComparer
 
         public static IEnumerable<T> GetLongestCommonSubsequence<T>(this IEnumerable<T> firstSequence, IEnumerable<T> secondSequence)
         {
-            return NSequenceComparerInternal<T>.GetLongestCommonSubsequence(firstSequence.ToList(), secondSequence.ToList()).AsEnumerable();
+            return NSequenceComparerInternal<T>.GetLongestCommonSubsequence(firstSequence, secondSequence).AsEnumerable();
         }
 
 
         public static IEnumerable<Difference<T>> GetDifferences<T>(this IEnumerable<T> firstSequence, IEnumerable<T> secondSequnece)
         {
-            return NSequenceComparerInternal<T>.GetDifferences(firstSequence.ToList(), secondSequnece.ToList()).AsEnumerable();
+            return NSequenceComparerInternal<T>.GetDifferences(firstSequence, secondSequnece).AsEnumerable();
         }
 
     }
