@@ -33,4 +33,6 @@ The differences list will have one for each unique items in two sequences. The d
 * Modified - not used for now
 
 ## What next?
-
+1. Support for complex types
+2. Implement AreSame method with various options like qignore order, casing, etc...
+3. and more...
