@@ -9,6 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSequenceComparer.Tests", "NSequenceComparer.Tests\NSequenceComparer.Tests.csproj", "{2E598F99-25D4-468C-AC63-4EC033924782}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspecs", "Nuspecs", "{1597F67B-3904-42F2-89DD-F45273B0DE1D}"
+	ProjectSection(SolutionItems) = preProject
+		NSequenceComparer.0.0.1.nupkg = NSequenceComparer.0.0.1.nupkg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
