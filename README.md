@@ -1,9 +1,12 @@
-#NSequenceComparer
+# NSequenceComparer
+
 This library allows you to compare two sequences to find the differences. 
-##Why?
+
+## Why?
 I found many programs does this using recursion, but, you cannot rely on recursion when comparing large sequence.
 This library uses [dynamic programming](http://en.wikipedia.org/wiki/Dynamic_programming) to avoid stack overflow exceptions.
-##How?
+
+## How?
 This library is very simple to use. It exposes two public methods
 * GetLongestCommonSubsequence()
 * GetDifferences()
@@ -18,6 +21,7 @@ var lcs = NComparer.GetLongestCommonSubseqeunce<int>(first, sequence); // using 
 var lcs = firstSequence.GetLongestCommonSubseqeunce(sequence); // using extension method
 ```
 #### GetDifferences()
+
 This returns the differences of input sequences.
 
 ```c#
@@ -33,6 +37,7 @@ The differences list will have one for each unique items in two sequences. The d
 * Modified - not used for now
 
 ## What next?
+
 1. Support for complex types
 2. Implement AreSame method with various options like qignore order, casing, etc...
 3. and more...
